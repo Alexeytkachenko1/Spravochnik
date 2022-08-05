@@ -34,7 +34,7 @@ namespace Prostoe_chislo
                 if (i == (sumOfElement / i))
                 {
                      divider= i;
-                    Console.WriteLine(i);
+                    
                     SimpleNumber(divider, sumOfElement);
                     break;
                 }
@@ -64,7 +64,7 @@ namespace Prostoe_chislo
             }
             double result = SumOfElements(myArray);
            FindOfDivider(result);
-            Console.WriteLine(result);
+          
        
           
 
