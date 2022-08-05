@@ -8,24 +8,20 @@ namespace Prostoe_chislo
 {
     internal class Program
     {
-
-        static int [] ProstoeChislo(int [] myArray)
+        static int SumOfElements(int[]myArray)
         {
-            int[]massivProstihChisel=new int[myArray.Length];
+            int SumOfElements = 0;
             for (int i = 0; i < myArray.Length; i++)
             {
-                if (myArray[i] % 2 != 0 )
-                {
-                    massivProstihChisel[i] = myArray[i];
-                }
-                else
-                {
-                    massivProstihChisel[i] = 0;
-                }
-                
+                SumOfElements += myArray[i];
             }
-            return massivProstihChisel;
+            if (SumOfElements%2 !=0)
+            {
+                return SumOfElements;
+            }
+            return 0;
         }
+      
         static void Main(string[] args)
         {
             Console.WriteLine("Vvedite massiv");
@@ -33,14 +29,11 @@ namespace Prostoe_chislo
             int[] myArray = new int[myMassiv];
             for (int i = 0; i < myArray.Length; i++)
             {
-                Console.Write($"Vvedite element pod indexom: {i}");
+                Console.Write($"Vvedite element pod indexom {i}: ");
                 myArray[i] = int.Parse(Console.ReadLine());
             }
-            int [] result = ProstoeChislo(myArray);
-            foreach (var item in result)
-            {
-                Console.WriteLine(item);
-            }
+            int result = SumOfElements(myArray);
+            Console.WriteLine(result);
         }
     }
 }
